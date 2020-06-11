@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='osx' display-mode='raw'>
+    <pages>
+        <page name='7.2-01'/>
+        <page name='7.2-02'/>
+        <page name='7.2-03'/>
+        <page name='7.2-04'/>
+        <page name='7.2-05'/>
+        <page name='7.2-06'/>
+        <page name='7.3-01'/>
+        <page name='7.3-02'/>
+        <page name='7.3-03'/>
+        <page name='7.3-04'/>
+        <page name='7.3-05'/>
+        <page name='7.3-06'/>
+        <page name='7.3-07'/>
+        <page name='7.3-08'/>
+        <page name='7.3-09'/>
+        <page name='7.3-10'/>
+        <page name='7.3-11'/>
+        <page name='7.3-12'/>
+        <page name='7.3-13'/>
+        <page name='7.4-01'/>
+        <page name='7.4-02'/>
+        <page name='7.4-03'/>
+        <page name='7.4-04'/>
+        <page name='7.4-05'/>
+        <page name='7.4-06'/>
+        <page name='7.5-01'/>
+        <page name='7.5-02'/>
+        <page name='7.5-03'/>
+        <page name='7.5-04'/>
+        <page name='7.5-05'/>
+        <page name='7.5-06'/>
+        <page name='7.6-01'/>
+        <page name='7.6-02'/>
+        <page name='7.6-03'/>
+        <page name='7.6-04'/>
+        <page name='7.6-05'/>
+        <page name='7.6-06'/>
+        <page name='7.7-01'/>
+        <page name='7.7-02'/>
+        <page name='7.7-03'/>
+        <page name='7.8-01'/>
+        <page name='7.8-02'/>
+    </pages>
+</playground>

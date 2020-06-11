@@ -1,0 +1,1 @@
+let dictionary: [String: Int] = [:] // 空の辞書

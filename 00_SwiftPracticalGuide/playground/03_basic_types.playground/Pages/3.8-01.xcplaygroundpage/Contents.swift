@@ -1,0 +1,1 @@
+let any = "abc" as Any // String型をAny型にアップキャスト

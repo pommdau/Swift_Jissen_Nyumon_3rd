@@ -1,0 +1,1 @@
+let floatRange: Range<Float> = 1..<3 // Range<Float>型

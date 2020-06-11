@@ -1,0 +1,1 @@
+let any: Any = "abc" // String型からAny型への暗黙的なアップキャスト
