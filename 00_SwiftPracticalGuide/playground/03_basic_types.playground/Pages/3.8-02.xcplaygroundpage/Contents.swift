@@ -1,0 +1,1 @@
+// let int = "abc" as Int // String型はInt型を継承していないためコンパイルエラー

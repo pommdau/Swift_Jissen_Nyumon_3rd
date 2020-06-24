@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='osx' display-mode='raw'>
+    <pages>
+        <page name='10.1-01'/>
+        <page name='10.1-02'/>
+        <page name='10.1-03'/>
+        <page name='10.2-01'/>
+        <page name='10.2-02'/>
+        <page name='10.2-03'/>
+        <page name='10.2-04'/>
+        <page name='10.3-01'/>
+        <page name='10.3-02'/>
+        <page name='10.3-03'/>
+        <page name='10.3-04'/>
+        <page name='10.3-05'/>
+        <page name='10.3-06'/>
+        <page name='10.3-07'/>
+        <page name='10.4-01'/>
+        <page name='10.4-02'/>
+        <page name='10.4-03'/>
+        <page name='10.4-04'/>
+        <page name='10.4-05'/>
+    </pages>
+</playground>

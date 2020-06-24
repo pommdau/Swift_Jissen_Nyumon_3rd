@@ -1,0 +1,1 @@
+let some = Optional.some(1) // Optional<Int>型

@@ -1,0 +1,2 @@
+struct SomeError : Error {
+}

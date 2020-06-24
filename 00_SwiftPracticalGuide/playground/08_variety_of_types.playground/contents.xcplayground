@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='osx' display-mode='raw'>
+    <pages>
+        <page name='8.2-01'/>
+        <page name='8.2-02'/>
+        <page name='8.2-03'/>
+        <page name='8.2-04'/>
+        <page name='8.2-05'/>
+        <page name='8.3-01'/>
+        <page name='8.3-02'/>
+        <page name='8.3-03'/>
+        <page name='8.3-04'/>
+        <page name='8.3-05'/>
+        <page name='8.3-06'/>
+        <page name='8.3-07'/>
+        <page name='8.4-01'/>
+        <page name='8.4-02'/>
+        <page name='8.4-03'/>
+        <page name='8.4-04'/>
+        <page name='8.4-05'/>
+        <page name='8.4-06'/>
+        <page name='8.4-07'/>
+        <page name='8.4-08'/>
+        <page name='8.4-09'/>
+        <page name='8.4-10'/>
+        <page name='8.4-11'/>
+        <page name='8.4-12'/>
+        <page name='8.4-13'/>
+        <page name='8.4-14'/>
+        <page name='8.4-15'/>
+        <page name='8.4-16'/>
+        <page name='8.5-01'/>
+        <page name='8.5-02'/>
+        <page name='8.5-03'/>
+        <page name='8.5-04'/>
+        <page name='8.5-05'/>
+        <page name='8.5-06'/>
+        <page name='8.5-07'/>
+        <page name='8.5-08'/>
+        <page name='8.5-09'/>
+        <page name='8.5-10'/>
+        <page name='8.5-11'/>
+    </pages>
+</playground>

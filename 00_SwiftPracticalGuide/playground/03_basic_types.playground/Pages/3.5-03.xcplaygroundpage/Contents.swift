@@ -1,0 +1,1 @@
+let none: Int? = Optional.none // Optional<Int>型
