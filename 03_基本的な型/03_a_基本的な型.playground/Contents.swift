@@ -109,4 +109,10 @@ let f = e.map({value in Int(value)})
 type(of: f)  // Optional<Optional<Int>>.Type
 */
 
-// MARK:- 3.6 Any型
+// MARK:- 型の判定
+let a: Any = 1
+let isInt = a is Int  // true
+
+
+
+
