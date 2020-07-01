@@ -58,7 +58,7 @@ counter()  // 2
 var queue = [() -> Void]()
 
 // 引数として与えられたクロージャを、配列queueに追加する
-// クリージャは関数のスコープ内で保存されるため、引数に@escapingが必要となる
+// クロージャは関数のスコープ内で保存されるため、引数に@escapingが必要となる
 func enqueue(operation: @escaping () -> Void) {
     queue.append(operation)
 }
@@ -72,7 +72,6 @@ queue.forEach { $0() }
  executed
  executed
  */
-
 
 // MARK:- autoclosure属性
 
