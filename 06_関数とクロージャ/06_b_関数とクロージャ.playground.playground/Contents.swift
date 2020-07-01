@@ -159,6 +159,7 @@ let doubledArray2 = array2.map { $0 * 2 }
 doubledArray2  // [8, 10, 12]
 
 // 改善
+// 関数を(Int) -> Int型のクロージャとして扱う
 func double(_ x: Int) -> Int {
     return x * 2
 }
@@ -174,8 +175,8 @@ board  // [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
 
 var board_02: [[Int]] = {
     let sideLength = 3
-    let row = Array(repeating: 1, count: sideLength)
-    let board = Array(repeating: row, count: sideLength)
+    let row = Array(repeating: 1, count: sideLength)  // row: [Int]
+    let board = Array(repeating: row, count: sideLength)  // board: [[Int]]
     return board
 }()
 
