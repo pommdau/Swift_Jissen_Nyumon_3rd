@@ -14,6 +14,9 @@
 		D034B42524C2173200224CB1 /* GitHubAPIDemo_01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B42424C2173200224CB1 /* GitHubAPIDemo_01Tests.swift */; };
 		D034B43024C2174300224CB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B42F24C2174300224CB1 /* User.swift */; };
 		D034B43224C2174E00224CB1 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B43124C2174E00224CB1 /* Repository.swift */; };
+		D034B43624C21A1300224CB1 /* ExampleJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B43524C21A1300224CB1 /* ExampleJSON.swift */; };
+		D034B43824C21A3800224CB1 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B43724C21A3800224CB1 /* UserTests.swift */; };
+		D034B43A24C21B2900224CB1 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B43924C21B2900224CB1 /* RepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		D034B42624C2173200224CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D034B42F24C2174300224CB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D034B43124C2174E00224CB1 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		D034B43524C21A1300224CB1 /* ExampleJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleJSON.swift; sourceTree = "<group>"; };
+		D034B43724C21A3800224CB1 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		D034B43924C21B2900224CB1 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				D034B42424C2173200224CB1 /* GitHubAPIDemo_01Tests.swift */,
+				D034B43524C21A1300224CB1 /* ExampleJSON.swift */,
+				D034B43724C21A3800224CB1 /* UserTests.swift */,
+				D034B43924C21B2900224CB1 /* RepositoryTests.swift */,
 				D034B42624C2173200224CB1 /* Info.plist */,
 			);
 			path = GitHubAPIDemo_01Tests;
@@ -212,7 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D034B43824C21A3800224CB1 /* UserTests.swift in Sources */,
+				D034B43624C21A1300224CB1 /* ExampleJSON.swift in Sources */,
 				D034B42524C2173200224CB1 /* GitHubAPIDemo_01Tests.swift in Sources */,
+				D034B43A24C21B2900224CB1 /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
