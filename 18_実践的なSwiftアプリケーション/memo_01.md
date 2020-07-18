@@ -141,3 +141,33 @@ X-GitHub-Request-Id: F26A:0482:171737:1D892C:5F0CFD59
 }
 ```
 
+# エラーを表すレスポンスのモデル化
+
+```JavaScript
+% curl -i 'https://api.github.com/search/undefined'
+HTTP/1.1 404 Not Found
+date: Sat, 18 Jul 2020 00:01:42 GMT
+content-type: application/json; charset=utf-8
+server: GitHub.com
+status: 404 Not Found
+x-github-media-type: github.v3; format=json
+access-control-expose-headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+access-control-allow-origin: *
+strict-transport-security: max-age=31536000; includeSubdomains; preload
+x-frame-options: deny
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: origin-when-cross-origin, strict-origin-when-cross-origin
+content-security-policy: default-src 'none'
+vary: Accept-Encoding, Accept, X-Requested-With
+X-Ratelimit-Limit: 60
+X-Ratelimit-Remaining: 59
+X-Ratelimit-Reset: 1595034102
+Content-Length: 87
+X-GitHub-Request-Id: EFE9:45B0:5B95E5:7AA6C7:5F123BE5
+
+{
+  "message": "Not Found",
+  "documentation_url": "https://developer.github.com/v3"
+}
+```
