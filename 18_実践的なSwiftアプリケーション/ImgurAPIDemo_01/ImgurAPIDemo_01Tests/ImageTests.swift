@@ -7,27 +7,21 @@
 //
 
 import XCTest
+@testable import ImgurAPIDemo_01
 
 class ImageTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testDocde() throws {
+        let jsonDecoder = JSONDecoder()
+        let data = Image.exampleJSON.data(using: .utf8)!
+        let image = try jsonDecoder.decode(Image.self, from: data)
+        
+        XCTAssertEqual(image.success, true)
+        XCTAssertEqual(image.status, 200)
+        XCTAssertEqual(image.data.id, "orunSTu")
+        XCTAssertEqual(image.data.datetime, 1495556889)
+        XCTAssertEqual(image.data.animated, false)
+        XCTAssertEqual(image.data.deletehash, "x70po4w7BVvSUzZ")
+        XCTAssertEqual(image.data.link, "http://i.imgur.com/orunSTu.gif")
     }
 
 }

@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+// MARK: - PostResponse
+struct Image: Codable {
+    let data: ImageInfo
+    let success: Bool
+    let status: Int
+}
+
+// MARK: - ImageInfo
+struct ImageInfo: Codable {
+    let id: String
+    let datetime: Int
+    let animated: Bool
+    let deletehash: String
+    let link: String
+}

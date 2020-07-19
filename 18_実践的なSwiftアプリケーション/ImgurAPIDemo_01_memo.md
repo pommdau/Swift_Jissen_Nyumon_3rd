@@ -2,6 +2,9 @@
 - https://api.imgur.com/oauth2/addclient
     - APIの登録
 - [POST Image Upload ](https://apidocs.imgur.com/?version=latest#c85c9dfc-7487-4de2-9ecd-66f727cf3139)
+- https://app.quicktype.io/
+    - JSON文字列からstructのコードを作成する
+    - 必要なところを抜き出す
 - [curl コマンド 使い方メモ \- Qiita](https://qiita.com/yasuhiroki/items/a569d3371a66e365316f#http-header%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B--i--i--v)
 
 ``` JavaScript

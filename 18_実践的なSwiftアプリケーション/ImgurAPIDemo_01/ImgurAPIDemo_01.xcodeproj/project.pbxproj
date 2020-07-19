@@ -12,6 +12,9 @@
 		D0A97F6724C45EAC000BACAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A97F6624C45EAC000BACAB /* Assets.xcassets */; };
 		D0A97F6A24C45EAC000BACAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A97F6824C45EAC000BACAB /* Main.storyboard */; };
 		D0A97F7624C45EAC000BACAB /* ImgurAPIDemo_01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97F7524C45EAC000BACAB /* ImgurAPIDemo_01Tests.swift */; };
+		D0A97F8524C482D4000BACAB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97F8424C482D4000BACAB /* Image.swift */; };
+		D0A97F8724C48305000BACAB /* ExampleJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97F8624C48305000BACAB /* ExampleJSON.swift */; };
+		D0A97F8924C4835C000BACAB /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97F8824C4835C000BACAB /* ImageTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 		D0A97F7124C45EAC000BACAB /* ImgurAPIDemo_01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgurAPIDemo_01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A97F7524C45EAC000BACAB /* ImgurAPIDemo_01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPIDemo_01Tests.swift; sourceTree = "<group>"; };
 		D0A97F7724C45EAC000BACAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A97F8424C482D4000BACAB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D0A97F8624C48305000BACAB /* ExampleJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleJSON.swift; sourceTree = "<group>"; };
+		D0A97F8824C4835C000BACAB /* ImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 			children = (
 				D0A97F6224C45EA9000BACAB /* AppDelegate.swift */,
 				D0A97F6424C45EA9000BACAB /* ViewController.swift */,
+				D0A97F8424C482D4000BACAB /* Image.swift */,
 				D0A97F6624C45EAC000BACAB /* Assets.xcassets */,
 				D0A97F6824C45EAC000BACAB /* Main.storyboard */,
 				D0A97F6B24C45EAC000BACAB /* Info.plist */,
@@ -91,6 +98,8 @@
 			children = (
 				D0A97F7524C45EAC000BACAB /* ImgurAPIDemo_01Tests.swift */,
 				D0A97F7724C45EAC000BACAB /* Info.plist */,
+				D0A97F8624C48305000BACAB /* ExampleJSON.swift */,
+				D0A97F8824C4835C000BACAB /* ImageTests.swift */,
 			);
 			path = ImgurAPIDemo_01Tests;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A97F6524C45EA9000BACAB /* ViewController.swift in Sources */,
+				D0A97F8524C482D4000BACAB /* Image.swift in Sources */,
 				D0A97F6324C45EA9000BACAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A97F8724C48305000BACAB /* ExampleJSON.swift in Sources */,
+				D0A97F8924C4835C000BACAB /* ImageTests.swift in Sources */,
 				D0A97F7624C45EAC000BACAB /* ImgurAPIDemo_01Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
