@@ -28,6 +28,10 @@ public final class GitHubAPI {
         }
         
         public var body: Encodable?
+        
+//        public init(keyword: String) {
+//            self.keyword = keyword
+//        }
     }
     
     public struct SearchUsers : GitHubRequest {
