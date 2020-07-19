@@ -9,7 +9,7 @@
 import Foundation
 @testable import ImgurAPIDemo_01
 
-extension Image {
+extension UploadingResponse {
     static var exampleJSON: String {
         return """
         {

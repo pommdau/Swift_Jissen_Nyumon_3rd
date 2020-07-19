@@ -1,16 +1,16 @@
 //
-//  Image.swift
+//  UploadingResponse.swift
 //  ImgurAPIDemo_01
 //
-//  Created by HIROKI IKEUCHI on 2020/07/19.
+//  Created by HIROKI IKEUCHI on 2020/07/20.
 //  Copyright © 2020 hikeuchi. All rights reserved.
 //
 
 import Foundation
 
-// MARK: - PostResponse
-struct Image: Codable {
-    let data: ImageInfo
+// MARK: - UploadingResponse
+struct UploadingResponse: Codable {
+    let imageInfo: ImageInfo
     let success: Bool
     let status: Int
 }
