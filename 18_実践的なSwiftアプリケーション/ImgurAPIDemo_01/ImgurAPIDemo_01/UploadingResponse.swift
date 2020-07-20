@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - UploadingResponse
 struct UploadingResponse: Codable {
-    let imageInfo: ImageInfo
+    let imageInfo: ImageInfo  // アップロードしたアイテムの情報
     let success: Bool
     let status: Int
     
