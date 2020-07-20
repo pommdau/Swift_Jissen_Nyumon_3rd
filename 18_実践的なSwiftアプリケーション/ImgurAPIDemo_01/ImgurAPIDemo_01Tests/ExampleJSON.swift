@@ -47,3 +47,20 @@ extension UploadingResponse {
         """
     }
 }
+
+extension ImgurAPIError {
+    static var exampleJSON: String {
+        return """
+        {
+            "data": {
+                "error": "Invalid client_id",
+                "request": "/3/image",
+                "method": "POST"
+            },
+            "success": false,
+            "status": 403
+        }
+        """
+    }
+    
+}
