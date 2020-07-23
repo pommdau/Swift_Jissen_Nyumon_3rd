@@ -9,7 +9,7 @@
 import Foundation
 @testable import ImgurAPIDemo_02
 
-extension UploadingResponse {
+extension UploadingResponse where Item == Media {
     static var exampleJSONSuccess: String {
         return """
         {
@@ -64,4 +64,9 @@ extension UploadingResponse {
     }
     
 }
+
+extension UploadingResponse where Item == Media {
+    
+}
+
 

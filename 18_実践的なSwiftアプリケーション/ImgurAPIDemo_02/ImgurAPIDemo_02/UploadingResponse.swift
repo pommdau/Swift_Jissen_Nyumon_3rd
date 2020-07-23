@@ -8,22 +8,32 @@
 
 import Foundation
 
-struct UploadingResponse: Codable {
-    let media: Media  // アップロードしたアイテムの情報
+struct UploadingResponse<Item: Codable>: Codable {
+    let item: Item  // アップロードしたアイテムの情報
     let success: Bool
     let status: Int
     
     public enum CodingKeys : String, CodingKey {
-        case media = "data"
+        case item = "data"
         case success
         case status
     }
 }
 
+// アップロードしたメディア情報
 struct Media: Codable {
     let id: String
     let datetime: Int
     let animated: Bool
     let deletehash: String
     let link: String
+}
+
+// メディアの削除結果
+struct DeletinnResult: Codable {
+    let result: Bool
+    
+    public enum CodingKeys : String, CodingKey {
+        case result = "data"
+    }
 }

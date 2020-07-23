@@ -13,16 +13,16 @@ import XCTest
 class UploadingResponseTests: XCTestCase {
     func testDocdeSuccessedResponse() throws {
         let jsonDecoder = JSONDecoder()
-        let data = UploadingResponse.exampleJSONSuccess.data(using: .utf8)!
-        let uploadingResponse = try jsonDecoder.decode(UploadingResponse.self, from: data)
+        let data = UploadingResponse<Media>.exampleJSONSuccess.data(using: .utf8)!
+        let uploadingResponse = try jsonDecoder.decode(UploadingResponse<Media>.self, from: data)
         
         XCTAssertEqual(uploadingResponse.success, true)
         XCTAssertEqual(uploadingResponse.status, 200)
-        XCTAssertEqual(uploadingResponse.media.id, "qZCWKxg")
-        XCTAssertEqual(uploadingResponse.media.datetime, 1595172252)
-        XCTAssertEqual(uploadingResponse.media.animated, false)
-        XCTAssertEqual(uploadingResponse.media.deletehash, "c2LANLNUeU0UANa")
-        XCTAssertEqual(uploadingResponse.media.link, "https://i.imgur.com/qZCWKxg.png")
+        XCTAssertEqual(uploadingResponse.item.id, "qZCWKxg")
+        XCTAssertEqual(uploadingResponse.item.datetime, 1595172252)
+        XCTAssertEqual(uploadingResponse.item.animated, false)
+        XCTAssertEqual(uploadingResponse.item.deletehash, "c2LANLNUeU0UANa")
+        XCTAssertEqual(uploadingResponse.item.link, "https://i.imgur.com/qZCWKxg.png")
     }
     
 //    func testDocdeFailedResponse() throws {
