@@ -13,8 +13,6 @@
 		D0A97FAC24C5D4BF000BACAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A97FAA24C5D4BF000BACAB /* Main.storyboard */; };
 		D0A97FB824C5D4BF000BACAB /* ImgurAPIDemo_02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97FB724C5D4BF000BACAB /* ImgurAPIDemo_02Tests.swift */; };
 		D0A97FC324C66261000BACAB /* UploadingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97FC224C66261000BACAB /* UploadingResponse.swift */; };
-		D0A97FC524C662CA000BACAB /* ExampleJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97FC424C662CA000BACAB /* ExampleJSON.swift */; };
-		D0A97FC724C6637A000BACAB /* UploadingResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97FC624C6637A000BACAB /* UploadingResponseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +37,6 @@
 		D0A97FB724C5D4BF000BACAB /* ImgurAPIDemo_02Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPIDemo_02Tests.swift; sourceTree = "<group>"; };
 		D0A97FB924C5D4BF000BACAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A97FC224C66261000BACAB /* UploadingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingResponse.swift; sourceTree = "<group>"; };
-		D0A97FC424C662CA000BACAB /* ExampleJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleJSON.swift; sourceTree = "<group>"; };
-		D0A97FC624C6637A000BACAB /* UploadingResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingResponseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +94,6 @@
 			children = (
 				D0A97FB724C5D4BF000BACAB /* ImgurAPIDemo_02Tests.swift */,
 				D0A97FB924C5D4BF000BACAB /* Info.plist */,
-				D0A97FC424C662CA000BACAB /* ExampleJSON.swift */,
-				D0A97FC624C6637A000BACAB /* UploadingResponseTests.swift */,
 			);
 			path = ImgurAPIDemo_02Tests;
 			sourceTree = "<group>";
@@ -214,8 +208,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A97FC524C662CA000BACAB /* ExampleJSON.swift in Sources */,
-				D0A97FC724C6637A000BACAB /* UploadingResponseTests.swift in Sources */,
 				D0A97FB824C5D4BF000BACAB /* ImgurAPIDemo_02Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
