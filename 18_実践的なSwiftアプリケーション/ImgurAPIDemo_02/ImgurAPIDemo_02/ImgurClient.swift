@@ -29,8 +29,10 @@ public class ImgurClient {
                 } catch let error as ImgurAPIError {
                     completion(Result.failure(.apiError(error)))
                 } catch {
+                    /*
                     let debug = String(data: data, encoding: .utf8)
-                    print(debug)
+                     print(debug)
+                     */
                     completion(.failure(.responseParseError(error)))
                 }
             case .failure(let error):

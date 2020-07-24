@@ -11,12 +11,12 @@ import Foundation
 public protocol ImgurRequest {
     associatedtype Response: Decodable  // Responseは連想型
     
-    var baseURL: URL { get }
-    var path: String { get }  // baesURLからの相対パス
-    var method: HTTPMethod { get }
-    var queryItems: [URLQueryItem] { get }
-    var header: Dictionary<String, String>? { get }
-    var body: Encodable? { get }  // HTTP bodyに設定するパラメータ
+    var baseURL     : URL                         { get }
+    var path        : String                      { get }  // baesURLからの相対パス
+    var method      : HTTPMethod                  { get }
+    var queryItems  : [URLQueryItem]              { get }
+    var header      : Dictionary<String, String>? { get }
+    var body        : Data?                       { get }  // HTTP bodyに設定するパラメータ
 }
 
 
@@ -44,7 +44,7 @@ public extension ImgurRequest {
             
             // ボディの設定
             if let body = body {
-                urlRequest.httpBody = body as! Data
+                urlRequest.httpBody = body
             }
         default:
             fatalError("Unsupported method \(method)")
@@ -67,6 +67,4 @@ public extension ImgurRequest {
             throw try decoder.decode(ImgurAPIError.self, from: data)
         }
     }
-    
 }
-

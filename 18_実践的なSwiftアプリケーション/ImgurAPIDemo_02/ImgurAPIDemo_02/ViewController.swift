@@ -17,7 +17,11 @@ class ViewController: NSViewController {
         let client = ImgurClient(httpClient: URLSession.shared)
         
         // Requestの発行
-        let fileURL = URL(fileURLWithPath: "/Users/ikeuchihiroki/Downloads/sample_image.png")
+        guard let downloadPath = (NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true) as [String]).first  else {
+            return
+        }
+            
+        let fileURL = URL(fileURLWithPath: downloadPath).appendingPathComponent("sample_image.png")
         guard let imageData  = NSData(contentsOf: fileURL) else {
             return
         }

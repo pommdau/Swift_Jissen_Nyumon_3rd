@@ -36,7 +36,7 @@ public final class ImgurAPI {
             ]
         }
         
-        public var body: Encodable? {
+        public var body: Data? {
             let bodyJSON = [
                 "image" : imageInBase64String,
             ]
@@ -47,9 +47,5 @@ public final class ImgurAPI {
             
             return bodyData
         }
-        
-//        public init(keyword: String) {
-//            self.keyword = keyword
-//        }
     }
 }
