@@ -13,6 +13,16 @@
 		D0A97FAC24C5D4BF000BACAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A97FAA24C5D4BF000BACAB /* Main.storyboard */; };
 		D0A97FB824C5D4BF000BACAB /* ImgurAPIDemo_02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97FB724C5D4BF000BACAB /* ImgurAPIDemo_02Tests.swift */; };
 		D0A97FC324C66261000BACAB /* UploadingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A97FC224C66261000BACAB /* UploadingResponse.swift */; };
+		D0E706B224CA12FD0065B029 /* OAuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706B124CA12FD0065B029 /* OAuthInfo.swift */; };
+		D0E706B624CA13BC0065B029 /* ImgurResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706B524CA13BC0065B029 /* ImgurResponse.swift */; };
+		D0E706BA24CA150A0065B029 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706B924CA150A0065B029 /* Image.swift */; };
+		D0E706BC24CA152B0065B029 /* ImgurClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706BB24CA152B0065B029 /* ImgurClientError.swift */; };
+		D0E706BE24CA15480065B029 /* ImgurAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706BD24CA15480065B029 /* ImgurAPIError.swift */; };
+		D0E706C024CA15B40065B029 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706BF24CA15B40065B029 /* HTTPMethod.swift */; };
+		D0E706C224CA15D20065B029 /* ImgurRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706C124CA15D20065B029 /* ImgurRequest.swift */; };
+		D0E706C424CA16310065B029 /* ImgurAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706C324CA16310065B029 /* ImgurAPI.swift */; };
+		D0E706C624CA96FC0065B029 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706C524CA96FC0065B029 /* HTTPClient.swift */; };
+		D0E706C824CA985A0065B029 /* ImgurClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706C724CA985A0065B029 /* ImgurClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +47,16 @@
 		D0A97FB724C5D4BF000BACAB /* ImgurAPIDemo_02Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPIDemo_02Tests.swift; sourceTree = "<group>"; };
 		D0A97FB924C5D4BF000BACAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A97FC224C66261000BACAB /* UploadingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingResponse.swift; sourceTree = "<group>"; };
+		D0E706B124CA12FD0065B029 /* OAuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthInfo.swift; sourceTree = "<group>"; };
+		D0E706B524CA13BC0065B029 /* ImgurResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurResponse.swift; sourceTree = "<group>"; };
+		D0E706B924CA150A0065B029 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D0E706BB24CA152B0065B029 /* ImgurClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurClientError.swift; sourceTree = "<group>"; };
+		D0E706BD24CA15480065B029 /* ImgurAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPIError.swift; sourceTree = "<group>"; };
+		D0E706BF24CA15B40065B029 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		D0E706C124CA15D20065B029 /* ImgurRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurRequest.swift; sourceTree = "<group>"; };
+		D0E706C324CA16310065B029 /* ImgurAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPI.swift; sourceTree = "<group>"; };
+		D0E706C524CA96FC0065B029 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		D0E706C724CA985A0065B029 /* ImgurClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +105,16 @@
 				D0A97FAA24C5D4BF000BACAB /* Main.storyboard */,
 				D0A97FAD24C5D4BF000BACAB /* Info.plist */,
 				D0A97FAE24C5D4BF000BACAB /* ImgurAPIDemo_02.entitlements */,
+				D0E706B524CA13BC0065B029 /* ImgurResponse.swift */,
+				D0E706B924CA150A0065B029 /* Image.swift */,
+				D0E706BB24CA152B0065B029 /* ImgurClientError.swift */,
+				D0E706BD24CA15480065B029 /* ImgurAPIError.swift */,
+				D0E706BF24CA15B40065B029 /* HTTPMethod.swift */,
+				D0E706C124CA15D20065B029 /* ImgurRequest.swift */,
+				D0E706C324CA16310065B029 /* ImgurAPI.swift */,
+				D0E706C524CA96FC0065B029 /* HTTPClient.swift */,
+				D0E706C724CA985A0065B029 /* ImgurClient.swift */,
+				D0E706B124CA12FD0065B029 /* OAuthInfo.swift */,
 			);
 			path = ImgurAPIDemo_02;
 			sourceTree = "<group>";
@@ -199,8 +229,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A97FA724C5D4B8000BACAB /* ViewController.swift in Sources */,
+				D0E706BC24CA152B0065B029 /* ImgurClientError.swift in Sources */,
+				D0E706C624CA96FC0065B029 /* HTTPClient.swift in Sources */,
+				D0E706C824CA985A0065B029 /* ImgurClient.swift in Sources */,
+				D0E706BA24CA150A0065B029 /* Image.swift in Sources */,
 				D0A97FC324C66261000BACAB /* UploadingResponse.swift in Sources */,
+				D0E706C424CA16310065B029 /* ImgurAPI.swift in Sources */,
+				D0E706C224CA15D20065B029 /* ImgurRequest.swift in Sources */,
+				D0E706B624CA13BC0065B029 /* ImgurResponse.swift in Sources */,
+				D0E706C024CA15B40065B029 /* HTTPMethod.swift in Sources */,
 				D0A97FA524C5D4B8000BACAB /* AppDelegate.swift in Sources */,
+				D0E706BE24CA15480065B029 /* ImgurAPIError.swift in Sources */,
+				D0E706B224CA12FD0065B029 /* OAuthInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
