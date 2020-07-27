@@ -8,8 +8,37 @@
 
 import Foundation
 
-// TODO: とりあえず非認証版を作成する
 public final class ImgurAPI {
+    
+    // 認証用
+    public struct UserAuthentication : ImgurRequest {
+        // GitHubRewuestが要求する連想型
+        public typealias Response = ImgurResponse<Image>
+        
+        public var method: HTTPMethod {
+            return .post
+        }
+        
+        public var path: String {
+            return "/oauth2/authorize"
+        }
+        
+        public var queryItems: [URLQueryItem] {
+            return [URLQueryItem(name: "client_id",     value: OAuthInfo.Imgur.clientID),
+                    URLQueryItem(name: "response_type", value: "token"),
+                    URLQueryItem(name: "state",         value: "sample")]
+        }
+        
+        public var header: Dictionary<String, String>? {
+            return nil
+        }
+        
+        public var body: Data? {
+            return nil
+        }
+    }
+    
+    
     public struct UploadImageWithoutAuthentication : ImgurRequest {
         public let imageInBase64String: String  // member wise initializerで代入される
         
@@ -30,8 +59,8 @@ public final class ImgurAPI {
         
         public var header: Dictionary<String, String>? {
             return [
-                "Authorization" : "Client-ID \(OAuthInfo.clientID)",
-//                "Content-Length" : "",
+                "Authorization" : "Client-ID \(OAuthInfo.Imgur.clientID)",
+                //                "Content-Length" : "",
                 "Content-Type" : "application/json",
             ]
         }

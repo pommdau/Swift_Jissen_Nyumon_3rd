@@ -10,9 +10,18 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    var imgurClient: ImgurClient?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // APIクライアントの作成
+        imgurClient = ImgurClient(httpClient: URLSession.shared)
+        let userAuthenticationRequest = ImgurAPI.UserAuthentication()
+        imgurClient?.openAuthorizePageInBrowser(request: userAuthenticationRequest)
+        
+        
+        /*
         // APIクライアントの作成
         let client = ImgurClient(httpClient: URLSession.shared)
         
@@ -45,7 +54,7 @@ class ViewController: NSViewController {
         
         // タイムアウトまでメインスレッドを停止
         Thread.sleep(forTimeInterval: timeoutInterval)
-        
+        */
         
         
         

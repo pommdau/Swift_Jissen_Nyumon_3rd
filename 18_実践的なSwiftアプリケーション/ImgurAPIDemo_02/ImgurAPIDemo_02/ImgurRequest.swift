@@ -35,6 +35,8 @@ public extension ImgurRequest {
         case .get:
             components?.queryItems = queryItems
         case .post:
+            components?.queryItems = queryItems
+            
             // ヘッダの設定
             if let header = header {
                 for (key, value) in header {
