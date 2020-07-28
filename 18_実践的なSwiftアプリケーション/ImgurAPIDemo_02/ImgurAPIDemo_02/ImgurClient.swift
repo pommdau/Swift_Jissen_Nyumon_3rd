@@ -26,14 +26,14 @@ public class ImgurClient {
         
         httpClient.sendRequest(urlRequest) { result in
             switch result {
-            case .success(let data, let urlResponse):
+            case .success((let data, let urlResponse)):
                 do {
                     let response = try request.response(from: data, urlResponse: urlResponse)
                     completion(Result.success(response))
                 } catch let error as ImgurAPIError {
                     completion(Result.failure(.apiError(error)))
                 } catch {
-                    
+                    /*
                     let debug = String(data: data, encoding: .utf8)
                     let dic = try? JSONSerialization.jsonObject(with: data ?? Data(), options: []) as? [String: Any]
                     
@@ -42,6 +42,7 @@ public class ImgurClient {
                             print("\(key):\(value)")
                         }
                     }
+                     */
                      
                     completion(.failure(.responseParseError(error)))
                 }

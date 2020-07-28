@@ -14,45 +14,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        
-        /*
-        // APIクライアントの作成
-        let client = ImgurClient(httpClient: URLSession.shared)
-        
-        // Requestの発行
-        guard let downloadPath = (NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true) as [String]).first  else {
-            return
-        }
-            
-        let fileURL = URL(fileURLWithPath: downloadPath).appendingPathComponent("sample_image.png")
-        guard let imageData  = NSData(contentsOf: fileURL) else {
-            return
-        }
-        let base64 = imageData.base64EncodedString()
-        let request = ImgurAPI.UploadImageWithoutAuthentication(imageInBase64String: base64)
-        
-        // リクエストの送信
-        client.send(request: request) { result in
-            switch result {
-            case .success(let response):
-                print(response.data.link)
-                exit(0)
-            case .failure(let error):
-                print(error)
-                exit(1)
-            }
-        }
-        
-        // タイムアウト時間
-        let timeoutInterval: TimeInterval = 60
-        
-        // タイムアウトまでメインスレッドを停止
-        Thread.sleep(forTimeInterval: timeoutInterval)
-        */
-        
-        
-        
     }
 
     override var representedObject: Any? {
@@ -90,17 +51,17 @@ class ViewController: NSViewController {
         // APIクライアントの作成
         let client = ImgurClient(httpClient: URLSession.shared)
         
-        // Requestの発行
+
         guard let downloadPath = (NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true) as [String]).first  else {
             return
         }
-            
         let fileURL = URL(fileURLWithPath: downloadPath).appendingPathComponent("sample_image.png")
         guard let imageData  = NSData(contentsOf: fileURL) else {
             return
         }
         let base64 = imageData.base64EncodedString()
-        let request = ImgurAPI.UploadImage(imageInBase64String: base64, needAuthentication: true)
+        
+        let request = ImgurAPI.UploadImage(imageInBase64String: base64, needAuthentication: true)  // Requestの発行
         
         // リクエストの送信
         client.send(request: request) { result in
@@ -110,6 +71,7 @@ class ViewController: NSViewController {
                 print(response)
             case .failure(let error):
                 print("画像のアップロード失敗")
+                print(error.localizedDescription)
             }
         }
     }

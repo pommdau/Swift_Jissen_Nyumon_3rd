@@ -10,12 +10,12 @@ import Foundation
 
 public struct ImgurAPIError : Decodable, Error {
     public struct Error : Decodable {
-        public var error: String
-        public var request: String
-        public var method: String
+        public var error   : String
+        public var request : String
+        public var method  : String
     }
     
-    public var success: Bool
-    public var status: Int
-    public var data: Error
+    public var success : Bool
+    public var status  : Int
+    public var data    : Error
 }
