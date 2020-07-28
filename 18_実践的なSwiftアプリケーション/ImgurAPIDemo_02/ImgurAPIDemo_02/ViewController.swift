@@ -29,6 +29,7 @@ class ViewController: NSViewController {
         
 //        OAuthInfo.Imgur.resetUserDefault()
         updateUI()
+
     }
 
     override var representedObject: Any? {
@@ -89,6 +90,7 @@ class ViewController: NSViewController {
                 OAuthInfo.Imgur.update(for: response)
                 print("アクセストークンの更新に成功")
             case .failure(let error):
+                print("アクセストークンの更新に失敗")
                 print(error)
             }
             
@@ -105,30 +107,50 @@ class ViewController: NSViewController {
         guard let downloadPath = (NSSearchPathForDirectoriesInDomains(.downloadsDirectory, .userDomainMask, true) as [String]).first  else {
             return
         }
-        let fileURL = URL(fileURLWithPath: downloadPath).appendingPathComponent("sample_image.png")
-        guard let imageData  = NSData(contentsOf: fileURL) else {
-            return
-        }
-        let base64 = imageData.base64EncodedString()
+//        let fileURL = URL(fileURLWithPath: downloadPath).appendingPathComponent("sample_image.png")
+//        guard let imageData  = NSData(contentsOf: fileURL) else {
+//            return
+//        }
         
-        let request = ImgurAPI.UploadImage(imageInBase64String: base64, needAuthentication: true)  // Requestの発行
-        
-        // リクエストの送信
-        isProgressing = true
-        updateUI()
-        client.send(request: request) { result in
-            self.isProgressing = false
-            switch result {
-            case .success(let response):
-                self.image = response.data
-                print(response)
-            case .failure(let error):
-                print("画像のアップロード失敗")
-                print(error.localizedDescription)
-            }
-            
-            DispatchQueue.main.async {
+        let openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = false // 複数ファイルの選択を許すか
+        openPanel.canChooseDirectories = false // ディレクトリを選択できるか
+        openPanel.canCreateDirectories = false // ディレクトリを作成できるか
+        openPanel.canChooseFiles = true // ファイルを選択できるか
+        openPanel.allowedFileTypes = NSImage.imageTypes // 選択できるファイル種別
+        openPanel.begin { (response) in
+            if response == NSApplication.ModalResponse.OK {
+                guard let url = openPanel.url else {
+                    return
+                }
+                
+                guard let imageData  = NSData(contentsOf: url) else {
+                    return
+                }
+                
+                let base64 = imageData.base64EncodedString()
+                
+                let request = ImgurAPI.UploadImage(imageInBase64String: base64, needAuthentication: true)  // Requestの発行
+                
+                // リクエストの送信
+                self.isProgressing = true
                 self.updateUI()
+                client.send(request: request) { result in
+                    self.isProgressing = false
+                    switch result {
+                    case .success(let response):
+                        self.image = response.data
+                        print("画像のアップロードに成功")
+                        print(response)
+                    case .failure(let error):
+                        print("画像のアップロードに失敗")
+                        print(error.localizedDescription)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.updateUI()
+                    }
+                }
             }
         }
     }

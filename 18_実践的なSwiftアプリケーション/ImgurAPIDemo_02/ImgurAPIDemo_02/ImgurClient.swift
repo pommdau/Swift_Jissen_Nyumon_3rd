@@ -10,7 +10,7 @@ import Cocoa
 
 public class ImgurClient {
     private let httpClient: HTTPClient  // HTTPClientプロトコルに準拠した型
-    public var callbackURLCompletion: () -> Void = {}  // for debug
+    public var callbackURLCompletion: () -> Void = {}  // コールバック後に呼び出し元クラスで処理（for debug）
     
     public init(httpClient: HTTPClient) {
         self.httpClient = httpClient
@@ -44,7 +44,6 @@ public class ImgurClient {
                         }
                     }
 
-                     
                     completion(.failure(.responseParseError(error)))
                 }
             case .failure(let error):
