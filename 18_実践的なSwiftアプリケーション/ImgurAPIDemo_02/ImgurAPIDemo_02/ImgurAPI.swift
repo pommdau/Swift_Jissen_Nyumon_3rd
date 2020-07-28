@@ -37,22 +37,21 @@ public final class ImgurAPI {
         }
     }
     
-    // 認証用
-     public struct UpdateAccessToken : ImgurRequest {
+    public struct UpdateAccessToken : ImgurRequest {
         public typealias Response = GenerateAccessTokenResponse
-         
-         public var method: HTTPMethod {
-             return .post
-         }
-         
-         public var path: String {
-             return "/oauth2/token"
-         }
         
-         public var queryItems: [URLQueryItem] {
+        public var method: HTTPMethod {
+            return .post
+        }
+        
+        public var path: String {
+            return "/oauth2/token"
+        }
+        
+        public var queryItems: [URLQueryItem] {
             return []
         }
-         
+        
         public var header: Dictionary<String, String>? {
             let bodySize = body?.count ?? 0
             return [
@@ -77,8 +76,9 @@ public final class ImgurAPI {
         }
     }
     
-    public struct UploadImageWithoutAuthentication : ImgurRequest {
+    public struct UploadImage : ImgurRequest {
         public let imageInBase64String: String  // member wise initializerで代入される
+        public let needAuthentication: Bool  // 認証状態で画像をアップロードするかどうか
         
         public typealias Response = ImgurResponse<Image>
         
@@ -95,11 +95,15 @@ public final class ImgurAPI {
         }
         
         public var header: Dictionary<String, String>? {
-            return [
-                "Authorization" : "Client-ID \(OAuthInfo.Imgur.clientID)",
-                //                "Content-Length" : "",
-                "Content-Type" : "application/json",
-            ]
+            var headerList = ["Content-Type" : "application/json"]
+            
+            if needAuthentication {
+                headerList["Authorization"] = "Bearer \(OAuthInfo.Imgur.accessToken)"
+            } else {
+                headerList["Authorization"] = "Client-ID \(OAuthInfo.Imgur.clientID)"
+            }
+            
+            return headerList
         }
         
         public var body: Data? {
