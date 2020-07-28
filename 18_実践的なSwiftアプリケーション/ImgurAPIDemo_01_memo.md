@@ -121,5 +121,27 @@ curl --location --request DELETE 'https://api.imgur.com/3/image/6QAdDyO5HYTBDHU'
 }
 ```
 
+- アクセストークンの更新
+
+```swift
+let dic = try? JSONSerialization.jsonObject(with: data ?? Data(), options: []) as? [String: Any]
+
+if let dic = dic {
+    for (key, value) in dic {
+        print("\(key):\(value)")
+    }
+}
+```
+
+```
+account_id:104356397
+scope:<null>
+refresh_token:f235fb7a192f035ab72dea28d5f64b444c7672fc
+token_type:bearer
+access_token:ae75b7b75182f24a95813feb999a00394e330a9a
+account_username:IKEH1024
+expires_in:315360000
+```
+
 
 

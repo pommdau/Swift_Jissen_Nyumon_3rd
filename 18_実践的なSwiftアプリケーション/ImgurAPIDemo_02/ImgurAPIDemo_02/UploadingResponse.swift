@@ -30,7 +30,7 @@ struct Media: Codable {
 }
 
 // メディアの削除結果
-struct DeletinnResult: Codable {
+struct DeletionResult: Codable {
     let result: Bool
     
     public enum CodingKeys : String, CodingKey {

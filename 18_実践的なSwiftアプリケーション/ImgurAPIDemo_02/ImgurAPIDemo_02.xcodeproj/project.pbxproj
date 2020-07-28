@@ -23,6 +23,7 @@
 		D0E706C424CA16310065B029 /* ImgurAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706C324CA16310065B029 /* ImgurAPI.swift */; };
 		D0E706C624CA96FC0065B029 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706C524CA96FC0065B029 /* HTTPClient.swift */; };
 		D0E706C824CA985A0065B029 /* ImgurClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706C724CA985A0065B029 /* ImgurClient.swift */; };
+		D0E706CA24CF25D80065B029 /* GenerateAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E706C924CF25D80065B029 /* GenerateAccessTokenResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D0E706C324CA16310065B029 /* ImgurAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPI.swift; sourceTree = "<group>"; };
 		D0E706C524CA96FC0065B029 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D0E706C724CA985A0065B029 /* ImgurClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurClient.swift; sourceTree = "<group>"; };
+		D0E706C924CF25D80065B029 /* GenerateAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateAccessTokenResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				D0A97FAE24C5D4BF000BACAB /* ImgurAPIDemo_02.entitlements */,
 				D0E706B524CA13BC0065B029 /* ImgurResponse.swift */,
 				D0E706B924CA150A0065B029 /* Image.swift */,
+				D0E706C924CF25D80065B029 /* GenerateAccessTokenResponse.swift */,
 				D0E706BB24CA152B0065B029 /* ImgurClientError.swift */,
 				D0E706BD24CA15480065B029 /* ImgurAPIError.swift */,
 				D0E706BF24CA15B40065B029 /* HTTPMethod.swift */,
@@ -241,6 +244,7 @@
 				D0A97FA524C5D4B8000BACAB /* AppDelegate.swift in Sources */,
 				D0E706BE24CA15480065B029 /* ImgurAPIError.swift in Sources */,
 				D0E706B224CA12FD0065B029 /* OAuthInfo.swift in Sources */,
+				D0E706CA24CF25D80065B029 /* GenerateAccessTokenResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -109,5 +109,12 @@ public final class OAuthInfo {
                 }
             }
         }
+        
+        static func update(for response: GenerateAccessTokenResponse) {
+            Self.accessToken     = response.accessToken
+            Self.refreshToken    = response.refreshToken
+            Self.accessToken     = response.accessToken
+            Self.accountUserName = response.accountUserName
+        }
     }
 }

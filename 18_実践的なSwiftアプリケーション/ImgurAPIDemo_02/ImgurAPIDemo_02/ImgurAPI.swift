@@ -12,7 +12,6 @@ public final class ImgurAPI {
     
     // 認証用
     public struct UserAuthentication : ImgurRequest {
-        // GitHubRewuestが要求する連想型
         public typealias Response = ImgurResponse<Image>
         
         public var method: HTTPMethod {
@@ -38,11 +37,49 @@ public final class ImgurAPI {
         }
     }
     
+    // 認証用
+     public struct UpdateAccessToken : ImgurRequest {
+        public typealias Response = GenerateAccessTokenResponse
+         
+         public var method: HTTPMethod {
+             return .post
+         }
+         
+         public var path: String {
+             return "/oauth2/token"
+         }
+        
+         public var queryItems: [URLQueryItem] {
+            return []
+        }
+         
+        public var header: Dictionary<String, String>? {
+            let bodySize = body?.count ?? 0
+            return [
+                "Content-Length" : "\(bodySize)",
+                "Content-Type"  : "application/json",
+            ]
+        }
+        
+        public var body: Data? {
+            let bodyJSON = [
+                "refresh_token" : OAuthInfo.Imgur.refreshToken,
+                "client_id"     : OAuthInfo.Imgur.clientID,
+                "client_secret" : OAuthInfo.Imgur.clientSecret,
+                "grant_type"    : "refresh_token",
+            ]
+            
+            guard let bodyData = try? JSONSerialization.data(withJSONObject: bodyJSON) else {
+                return nil
+            }
+            
+            return bodyData
+        }
+    }
     
     public struct UploadImageWithoutAuthentication : ImgurRequest {
         public let imageInBase64String: String  // member wise initializerで代入される
         
-        // GitHubRewuestが要求する連想型
         public typealias Response = ImgurResponse<Image>
         
         public var method: HTTPMethod {

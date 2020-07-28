@@ -14,12 +14,7 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // APIクライアントの作成
-        imgurClient = ImgurClient(httpClient: URLSession.shared)
-        let userAuthenticationRequest = ImgurAPI.UserAuthentication()
-        imgurClient?.openAuthorizePageInBrowser(request: userAuthenticationRequest)
-        
+                
         
         /*
         // APIクライアントの作成
@@ -62,10 +57,43 @@ class ViewController: NSViewController {
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
-
-
+    
+    @IBAction func authorizeButtonClicked(_ sender: Any) {
+        imgurClient = ImgurClient(httpClient: URLSession.shared)
+        let userAuthenticationRequest = ImgurAPI.UserAuthentication()
+        imgurClient?.openAuthorizePageInBrowser(request: userAuthenticationRequest)
+    }
+    
+    @IBAction func updateAccessTokenButtonClicked(_ sender: Any) {
+        // APIクライアントの作成
+        let client = ImgurClient(httpClient: URLSession.shared)
+        
+        // Requestの発行
+        let request = ImgurAPI.UpdateAccessToken()
+        
+        // リクエストの送信
+        client.send(request: request) { result in
+            switch result {
+            case .success(let response):
+                OAuthInfo.Imgur.update(for: response)
+                print("🍎アクセストークンの更新：\(response)")
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        // タイムアウト時間
+        let timeoutInterval: TimeInterval = 60
+        
+        // タイムアウトまでメインスレッドを停止
+        Thread.sleep(forTimeInterval: timeoutInterval)
+    }
+    
+    @IBAction func uploadImageButtonClicked(_ sender: Any) {
+        
+    }
 }
 

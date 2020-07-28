@@ -33,10 +33,16 @@ public class ImgurClient {
                 } catch let error as ImgurAPIError {
                     completion(Result.failure(.apiError(error)))
                 } catch {
-                    /*
+                    
                     let debug = String(data: data, encoding: .utf8)
-                     print(debug)
-                     */
+                    let dic = try? JSONSerialization.jsonObject(with: data ?? Data(), options: []) as? [String: Any]
+                    
+                    if let dic = dic {
+                        for (key, value) in dic {
+                            print("\(key):\(value)")
+                        }
+                    }
+                     
                     completion(.failure(.responseParseError(error)))
                 }
             case .failure(let error):
@@ -44,6 +50,8 @@ public class ImgurClient {
             }
         }
     }
+    
+    // MARK:- OAuth2.0初回認証用
     
     public func openAuthorizePageInBrowser<Request : ImgurRequest>(request: Request) {
         let urlRequest = request.buildURLRequest()
