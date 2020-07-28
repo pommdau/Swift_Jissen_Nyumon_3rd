@@ -10,6 +10,7 @@ import Cocoa
 
 public class ImgurClient {
     private let httpClient: HTTPClient  // HTTPClientプロトコルに準拠した型
+    public var callbackURLCompletion: () -> Void = {}  // for debug
     
     public init(httpClient: HTTPClient) {
         self.httpClient = httpClient
@@ -88,5 +89,6 @@ public class ImgurClient {
         }
         
         OAuthInfo.Imgur.update(for: queryItems)
+        callbackURLCompletion()
     }
 }

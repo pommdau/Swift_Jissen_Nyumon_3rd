@@ -15,13 +15,19 @@ class ViewController: NSViewController {
     @IBOutlet weak var uploadingImageButton: NSButton!
     @IBOutlet weak var deletingImageButton: NSButton!
     
+    @IBOutlet weak var accessTokenLabel: NSTextField!
+    @IBOutlet weak var refreshTokenLabel: NSTextField!
+    @IBOutlet weak var imageURLLabel: NSTextField!
+    
+    
     var imgurClient: ImgurClient?  // CallBackURLを受け取るためにプロパティとして保持する
     var image: Image?  // アップロードしたメディア情報
-    var isProgressing: Bool = false  // 処理中かどうか
+    var isProgressing: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        OAuthInfo.Imgur.resetUserDefault()
         updateUI()
     }
 
@@ -32,6 +38,9 @@ class ViewController: NSViewController {
     }
     
     func updateUI() {
+        accessTokenLabel.stringValue = OAuthInfo.Imgur.accessToken
+        refreshTokenLabel.stringValue = OAuthInfo.Imgur.refreshToken
+        
         if isProgressing {
             progressIndicator.isHidden = false
             progressIndicator.startAnimation(nil)
@@ -50,14 +59,18 @@ class ViewController: NSViewController {
             }
             
             deletingImageButton.isEnabled = true
+            imageURLLabel.stringValue = url.absoluteString
         } else {
             imageView.image = nil
             deletingImageButton.isEnabled = false
+            imageURLLabel.stringValue = ""
         }
+        
     }
     
     @IBAction func authorizeButtonClicked(_ sender: Any) {
         imgurClient = ImgurClient(httpClient: URLSession.shared)
+        imgurClient?.callbackURLCompletion = updateUI  // UIに表示するために実装しているだけで本来は必要なしです。
         let userAuthenticationRequest = ImgurAPI.UserAuthentication()
         imgurClient?.openAuthorizePageInBrowser(request: userAuthenticationRequest)
     }
@@ -77,6 +90,10 @@ class ViewController: NSViewController {
                 print("アクセストークンの更新に成功")
             case .failure(let error):
                 print(error)
+            }
+            
+            DispatchQueue.main.async {
+                self.updateUI()
             }
         }
     }
@@ -104,15 +121,14 @@ class ViewController: NSViewController {
             switch result {
             case .success(let response):
                 self.image = response.data
-                
-                DispatchQueue.main.async {
-                    self.updateUI()
-                }
-                
                 print(response)
             case .failure(let error):
                 print("画像のアップロード失敗")
                 print(error.localizedDescription)
+            }
+            
+            DispatchQueue.main.async {
+                self.updateUI()
             }
         }
     }
@@ -139,13 +155,13 @@ class ViewController: NSViewController {
                 } else {
                     print("画像の削除に失敗")
                 }
-                
-                DispatchQueue.main.async {
-                    self.updateUI()
-                }
             case .failure(let error):
                 print("画像の削除に失敗")
                 print(error.localizedDescription)
+            }
+            
+            DispatchQueue.main.async {
+                self.updateUI()
             }
         }
     }
