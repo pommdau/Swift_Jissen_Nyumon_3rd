@@ -34,7 +34,7 @@ public extension ImgurRequest {
         switch method {
         case .get:
             components?.queryItems = queryItems
-        case .post:
+        case .post, .delete:
             components?.queryItems = queryItems
             
             // ヘッダの設定

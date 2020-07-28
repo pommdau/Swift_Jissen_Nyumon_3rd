@@ -118,4 +118,39 @@ public final class ImgurAPI {
             return bodyData
         }
     }
+    
+    public struct DeleteImage : ImgurRequest {
+        public let imageHash: String
+        public let needAuthentication: Bool  // 認証状態で画像をアップロードするかどうか
+        
+        public typealias Response = ImgurResponse<Bool>
+        
+        public var method: HTTPMethod {
+            return .delete
+        }
+        
+        public var path: String {
+            return "/3/image/\(imageHash)"
+        }
+        
+        public var queryItems: [URLQueryItem] {
+            return []
+        }
+        
+        public var header: Dictionary<String, String>? {
+            var headerList = ["Content-Type" : "application/json"]  // TODO: 不要？
+            
+            if needAuthentication {
+                headerList["Authorization"] = "Bearer \(OAuthInfo.Imgur.accessToken)"
+            } else {
+                headerList["Authorization"] = "Client-ID \(OAuthInfo.Imgur.clientID)"
+            }
+            
+            return headerList
+        }
+        
+        public var body: Data? {
+            return nil
+        }
+    }
 }

@@ -143,5 +143,10 @@ account_username:IKEH1024
 expires_in:315360000
 ```
 
+- 画像削除時のレスポンス
 
-
+```
+success:1
+data:1
+status:200
+```

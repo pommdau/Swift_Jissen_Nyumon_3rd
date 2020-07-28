@@ -33,7 +33,7 @@ public class ImgurClient {
                 } catch let error as ImgurAPIError {
                     completion(Result.failure(.apiError(error)))
                 } catch {
-                    /*
+
                     let debug = String(data: data, encoding: .utf8)
                     let dic = try? JSONSerialization.jsonObject(with: data ?? Data(), options: []) as? [String: Any]
                     
@@ -42,7 +42,7 @@ public class ImgurClient {
                             print("\(key):\(value)")
                         }
                     }
-                     */
+
                      
                     completion(.failure(.responseParseError(error)))
                 }

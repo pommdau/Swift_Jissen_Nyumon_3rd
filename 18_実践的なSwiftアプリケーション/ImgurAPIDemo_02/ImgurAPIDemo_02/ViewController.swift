@@ -21,6 +21,8 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateUI()
     }
 
     override var representedObject: Any? {
@@ -49,6 +51,7 @@ class ViewController: NSViewController {
             
             deletingImageButton.isEnabled = true
         } else {
+            imageView.image = nil
             deletingImageButton.isEnabled = false
         }
     }
@@ -97,7 +100,6 @@ class ViewController: NSViewController {
         isProgressing = true
         updateUI()
         client.send(request: request) { result in
-            sleep(1)
             self.isProgressing = false
             switch result {
             case .success(let response):
@@ -116,7 +118,36 @@ class ViewController: NSViewController {
     }
     
     @IBAction func deleteImageButtonClicked(_ sender: Any) {
+        // APIクライアントの作成
+        let client = ImgurClient(httpClient: URLSession.shared)
+        
+        guard let imageHash = image?.deletehash else {
+            return
+        }
+        let request = ImgurAPI.DeleteImage.init(imageHash: imageHash , needAuthentication: true)
+        
+        // リクエストの送信
+        isProgressing = true
         updateUI()
+        client.send(request: request) { result in
+            self.isProgressing = false
+            switch result {
+            case .success(let response):
+                if response.data {
+                    print("画像の削除に成功")
+                    self.image = nil
+                } else {
+                    print("画像の削除に失敗")
+                }
+                
+                DispatchQueue.main.async {
+                    self.updateUI()
+                }
+            case .failure(let error):
+                print("画像の削除に失敗")
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
