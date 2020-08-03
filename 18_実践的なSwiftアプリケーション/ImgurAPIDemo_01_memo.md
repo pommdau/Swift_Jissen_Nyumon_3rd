@@ -8,8 +8,7 @@
 - [curl コマンド 使い方メモ \- Qiita](https://qiita.com/yasuhiroki/items/a569d3371a66e365316f#http-header%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B--i--i--v)
 
 # ターミナルからアップロード
-- 画像をbase64文字列化する
-- あまりにbase64文字列が長いとエラーになるので、単色の小さいスクリーンショットを撮ってこれを使用した。
+
 
 ``` JavaScript
 my_image=`base64 "/Users/ikeuchihiroki/Desktop/images/desktop 12.png"`
@@ -150,3 +149,5 @@ success:1
 data:1
 status:200
 ```
+
+- [\[Swift\] OSX でファイルを開く・保存するダイアログを開く](https://qiita.com/takecian/items/d31682899768f89a8d80)
