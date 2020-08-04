@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ImgurResponse<Item : Decodable> : Decodable {
+public struct ImgurBaseResponse<Item : Decodable> : Decodable {
     public var success: Bool
     public var status: Int
     public var data: Item  // レスポンスの詳細情報

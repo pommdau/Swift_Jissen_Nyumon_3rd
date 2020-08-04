@@ -12,7 +12,7 @@ public final class ImgurAPI {
     
     // 認証用
     public struct UserAuthentication : ImgurRequest {
-        public typealias Response = ImgurResponse<Image>
+        public typealias Response = ImgurBaseResponse<Image>
         
         public var method: HTTPMethod {
             return .post
@@ -80,7 +80,7 @@ public final class ImgurAPI {
         public let imageInBase64String: String  // member wise initializerで代入される
         public let needAuthentication: Bool  // 認証状態で画像をアップロードするかどうか
         
-        public typealias Response = ImgurResponse<Image>
+        public typealias Response = ImgurBaseResponse<Image>
         
         public var method: HTTPMethod {
             return .post
@@ -123,7 +123,7 @@ public final class ImgurAPI {
         public let imageHash: String
         public let needAuthentication: Bool  // 認証状態で画像をアップロードするかどうか
         
-        public typealias Response = ImgurResponse<Bool>
+        public typealias Response = ImgurBaseResponse<Bool>
         
         public var method: HTTPMethod {
             return .delete
