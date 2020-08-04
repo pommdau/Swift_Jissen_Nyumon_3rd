@@ -1,26 +1,26 @@
 //
 //  GitHubRequest.swift
-//  GitHubAPIDemo_01
+//  GitHubAPIDemo_02
 //
-//  Created by HIROKI IKEUCHI on 2020/07/18.
+//  Created by HIROKI IKEUCHI on 2020/07/24.
 //  Copyright © 2020 hikeuchi. All rights reserved.
 //
 
 import Foundation
 
 public protocol GitHubRequest {
-    associatedtype Response: Decodable  // Responseは連想型
+    associatedtype Response: Decodable  // 実装先のtypealiasで指定できる
     
     var baseURL: URL { get }
     var path: String { get }  // baesURLからの相対パス
     var method: HTTPMethod { get }
     var queryItems: [URLQueryItem] { get }
-    var body: Encodable? { get }  // HTTP bodyに設定するパラメータ
+    var body: Encodable? { get }
 }
 
-
 public extension GitHubRequest {
-    var baseURL: URL {  // デフォルト実装
+    
+    var baseURL: URL {
         return URL(string: "https://api.github.com")!
     }
     
@@ -51,7 +51,6 @@ public extension GitHubRequest {
             return try decoder.decode(Response.self, from: data)
         } else {
             throw try decoder.decode(GitHubAPIError.self, from: data)
-        }        
+        }
     }
-    
 }
