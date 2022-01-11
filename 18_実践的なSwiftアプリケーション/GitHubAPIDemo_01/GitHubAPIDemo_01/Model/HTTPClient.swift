@@ -2,9 +2,13 @@ import Foundation
 
 // HTTPクライアントの最小限の機能をプロトコルで定義する
 public protocol HTTPClient {
-    func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void)
+    func sendRequest(_ urlRequest: URLRequest,
+                     completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void)
 }
 
+// MARK: - URLSession + HTTPClient
+
+// URLSessionクラスとHTTPクライアントとして使えるようにする
 extension URLSession : HTTPClient {
     public func sendRequest(_ urlRequest: URLRequest,
                             completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {

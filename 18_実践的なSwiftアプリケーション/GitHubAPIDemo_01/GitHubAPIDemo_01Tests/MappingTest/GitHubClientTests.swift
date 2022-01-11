@@ -12,7 +12,9 @@ class GitHubClientTests : XCTestCase {
         gitHubClient = GitHubClient(httpClient: httpClient)
     }
     
-    private func makeHTTPClientResult(statusCode: Int, json: String) -> Result<(Data, HTTPURLResponse), Error> {
+    // 通信の成功時の結果を指定しやすくするためのファクトリメソッド
+    private func makeHTTPClientResult(statusCode: Int,
+                                      json: String) -> Result<(Data, HTTPURLResponse), Error> {
         return .success((
             json.data(using: .utf8)!,
             HTTPURLResponse(
@@ -24,12 +26,12 @@ class GitHubClientTests : XCTestCase {
     }
     
     func testSuccess() {
+        // StubHTTPClientのresult変数に予想される結果を格納
         httpClient.result = makeHTTPClientResult(
             statusCode: 200,
             json: GitHubAPI.SearchRepositories.Response.exampleJSON)
 
         let request = GitHubAPI.SearchRepositories(keyword: "swift")
-        
         let apiExpectation = expectation(description: "")
         gitHubClient.send(request: request) { result in
             switch result {

@@ -8,12 +8,21 @@
 
 import Foundation
 
+// GitHubClient: APIクライアント
+
 public class GitHubClient {
-    private let httpClient: HTTPClient  // HTTPClientプロトコルに準拠した型
+    
+    // MARK: - Properties
+    
+    private let httpClient: HTTPClient  // HTTPClientプロトコルに準拠した型。sendRequestの機能を持つ。
+    
+    // MARK: - Lifecycles
     
     public init(httpClient: HTTPClient) {
         self.httpClient = httpClient
     }
+    
+    // MARK: - Helpers
     
     public func send<Request : GitHubRequest>
         (request: Request,
@@ -24,7 +33,7 @@ public class GitHubClient {
             switch result {
             case .success(let data, let urlResponse):
                 do {
-                    let response = try request.response(from: data, urlResponse: urlResponse)
+                    let response = try request.response(from: data, urlResponse: urlResponse)  // responseの型はリクエストの型に依存
                     completion(Result.success(response))
                 } catch let error as GitHubAPIError {
                     completion(Result.failure(.apiError(error)))
