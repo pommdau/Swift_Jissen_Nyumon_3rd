@@ -15,6 +15,6 @@ public struct GitHubAPIError : Decodable, Error {
         public var code: String
     }
     
-    public var message: String
+    public var message: String  // レスポンスのJSONに必ず含まれる
     public var errors: [Error]
 }

@@ -11,7 +11,6 @@
 		D034B41424C2173100224CB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B41324C2173100224CB1 /* ViewController.swift */; };
 		D034B41624C2173200224CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D034B41524C2173200224CB1 /* Assets.xcassets */; };
 		D034B41924C2173200224CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D034B41724C2173200224CB1 /* Main.storyboard */; };
-		D034B42524C2173200224CB1 /* GitHubAPIDemo_01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B42424C2173200224CB1 /* GitHubAPIDemo_01Tests.swift */; };
 		D034B43024C2174300224CB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B42F24C2174300224CB1 /* User.swift */; };
 		D034B43224C2174E00224CB1 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B43124C2174E00224CB1 /* Repository.swift */; };
 		D034B43624C21A1300224CB1 /* ExampleJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034B43524C21A1300224CB1 /* ExampleJSON.swift */; };
@@ -50,7 +49,6 @@
 		D034B41A24C2173200224CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D034B41B24C2173200224CB1 /* GitHubAPIDemo_01.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHubAPIDemo_01.entitlements; sourceTree = "<group>"; };
 		D034B42024C2173200224CB1 /* GitHubAPIDemo_01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAPIDemo_01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D034B42424C2173200224CB1 /* GitHubAPIDemo_01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIDemo_01Tests.swift; sourceTree = "<group>"; };
 		D034B42624C2173200224CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D034B42F24C2174300224CB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		D034B43124C2174E00224CB1 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = ../Repository.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				D034B44024C2728F00224CB1 /* MappingTest */,
-				D034B42424C2173200224CB1 /* GitHubAPIDemo_01Tests.swift */,
 				D034B42624C2173200224CB1 /* Info.plist */,
 			);
 			path = GitHubAPIDemo_01Tests;
@@ -284,7 +281,6 @@
 				D034B44624C2759700224CB1 /* GitHubAPIErrorTests.swift in Sources */,
 				D034B43824C21A3800224CB1 /* UserTests.swift in Sources */,
 				D034B43624C21A1300224CB1 /* ExampleJSON.swift in Sources */,
-				D034B42524C2173200224CB1 /* GitHubAPIDemo_01Tests.swift in Sources */,
 				D034B43A24C21B2900224CB1 /* RepositoryTests.swift in Sources */,
 				D034B45224C2C2D200224CB1 /* StubHTTPClient.swift in Sources */,
 				D034B43F24C225E400224CB1 /* SearchResponseTests.swift in Sources */,

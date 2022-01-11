@@ -9,12 +9,12 @@
 import Foundation
 
 public protocol GitHubRequest {
-    associatedtype Response: Decodable  // Responseは連想型
+    associatedtype Response: Decodable  // Responseは連想型。リクエストの型からレスポンスの型を決定できるようにする。
     
     var baseURL: URL { get }
     var path: String { get }  // baesURLからの相対パス
     var method: HTTPMethod { get }
-    var queryItems: [URLQueryItem] { get }
+    var queryItems: [URLQueryItem] { get }  // URLQueryItem: クエリ文字列を表すための型
     var body: Encodable? { get }  // HTTP bodyに設定するパラメータ
 }
 
@@ -42,7 +42,7 @@ public extension GitHubRequest {
         return urlRequest
     }
     
-    // URLSessionを通じてサーバから受け取ったData型 + HTTPURLResponse型の数値 = レスポンスの型を表すRespnseの値
+    // 戻り値のResponseは連想型で、リクエストの型に応じた適切なものになる
     func response(from data: Data,
                   urlResponse: HTTPURLResponse) throws -> Response {
 

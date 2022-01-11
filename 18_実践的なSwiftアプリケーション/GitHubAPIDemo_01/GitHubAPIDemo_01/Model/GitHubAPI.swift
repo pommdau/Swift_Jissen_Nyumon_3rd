@@ -8,8 +8,16 @@
 
 import Foundation
 
+// GitHubAPIのようにグルーピングすることで、GitHubAPI.SearchRepositoriesのようにアクセスできる
+// アプリケーションの内部で複数のサービスが提供するAPIを使用する際に効果的
 public final class GitHubAPI {
+    
+    // MARK: - SearchRepositories
+    
     public struct SearchRepositories : GitHubRequest {
+        
+        // MARK: - Properties
+                
         public let keyword: String
         
         // GitHubRewuestが要求する連想型
@@ -29,10 +37,14 @@ public final class GitHubAPI {
         
         public var body: Encodable?
         
+        // MARK: - Lifecycles
+                
 //        public init(keyword: String) {
 //            self.keyword = keyword
 //        }
     }
+    
+    // MARK: - SearchUsers
     
     public struct SearchUsers : GitHubRequest {
         public let keyword: String
