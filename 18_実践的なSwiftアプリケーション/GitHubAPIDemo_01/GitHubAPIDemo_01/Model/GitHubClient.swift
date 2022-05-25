@@ -24,7 +24,7 @@ public class GitHubClient {
     
     // MARK: - Helpers
     
-    public func send<Request : GitHubRequest>(request: Request) async throws -> Request.Response{
+    public func send<Request : GitHubRequest>(request: Request) async throws -> Request.Response {
         
         let data: Data
         let urlResponse: HTTPURLResponse
