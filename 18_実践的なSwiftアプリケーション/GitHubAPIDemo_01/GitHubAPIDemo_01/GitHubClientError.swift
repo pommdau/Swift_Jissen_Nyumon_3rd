@@ -18,4 +18,7 @@ public enum GitHubClientError : Error {
     // APIからエラーレスポンスを受け取った
     case apiError(GitHubAPIError)
     
+    // response as? HTTPURLResponseに失敗
+    case httpURLResponseCastError
+    
 }

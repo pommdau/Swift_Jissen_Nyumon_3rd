@@ -24,25 +24,23 @@ public class GitHubClient {
     
     // MARK: - Helpers
     
-    public func send<Request : GitHubRequest>
-        (request: Request,
-         completion: @escaping (Result<Request.Response, GitHubClientError>) -> Void) {
-        let urlRequest = request.buildURLRequest()
+    public func send<Request : GitHubRequest>(request: Request) async throws -> Request.Response{
         
-        httpClient.sendRequest(urlRequest) { result in
-            switch result {
-            case .success(let data, let urlResponse):
-                do {
-                    let response = try request.response(from: data, urlResponse: urlResponse)  // responseの型はリクエストの型に依存
-                    completion(Result.success(response))
-                } catch let error as GitHubAPIError {
-                    completion(Result.failure(.apiError(error)))
-                } catch {
-                    completion(.failure(.responseParseError(error)))
-                }
-            case .failure(let error):
-                completion(.failure(.connectionError(error)))
-            }
+        let data: Data
+        let urlResponse: HTTPURLResponse
+        do {
+            (data, urlResponse) = try await httpClient.sendRequest(request.buildURLRequest())
+        } catch {
+            throw GitHubClientError.connectionError(error)
+        }
+        
+        do {
+            let response = try request.response(from: data, urlResponse: urlResponse)  // responseの型はリクエストの型に依存
+            return response
+        } catch let error as GitHubAPIError {
+            throw GitHubClientError.apiError(error)
+        } catch {
+            throw GitHubClientError.responseParseError(error)
         }
     }
 }
